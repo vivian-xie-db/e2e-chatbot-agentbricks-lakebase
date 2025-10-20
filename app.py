@@ -245,6 +245,7 @@ with st.sidebar:
         with col2:
             if st.button("📝 New Chat", use_container_width=True):
                 st.session_state.viewing_history = None
+                st.session_state.history = []
                 st.rerun()
         
         if st.session_state.viewing_history is not None:
