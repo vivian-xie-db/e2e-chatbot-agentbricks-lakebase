@@ -1,0 +1,26 @@
+[project]
+name = "e2e-chatbot-app"
+version = "0.1.0"
+description = "A production-ready chatbot application built with Databricks Model Serving endpoint and LakeBase"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "mlflow>=2.21.2",
+    "streamlit==1.44.1",
+    "psycopg[binary]>=3.1.0",
+    "psycopg-pool>=3.1.0",
+    "databricks-sdk>=0.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+only-include = ["app.py", "messages.py", "model_serving_utils.py"]
+
+[tool.uv]
+dev-dependencies = []
+

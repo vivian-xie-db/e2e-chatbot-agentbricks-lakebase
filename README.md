@@ -54,18 +54,25 @@ This application demonstrates an end-to-end conversational AI solution leveragin
 
 ## Installation
 
+### Option 1: Using uv (Recommended - Fast!)
+
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
    cd e2e-chatbot-app
    ```
 
-2. **Install dependencies**
+2. **Install uv** (if not already installed)
    ```bash
-   pip install -r requirements.txt
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
-3. **Configure environment variables**
+3. **Install dependencies**
+   ```bash
+   uv sync
+   ```
+
+4. **Configure environment variables**
 
    Create a `.env` file with the following variables:
 
@@ -81,6 +88,26 @@ This application demonstrates an end-to-end conversational AI solution leveragin
    PGSSLMODE=require
    PGAPPNAME=chatbot_app
    ```
+
+5. **Run the application**
+   ```bash
+   uv run streamlit run app.py
+   ```
+
+### Option 2: Using pip (Traditional)
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd e2e-chatbot-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment variables** (same as above)
 
 4. **Run the application**
    ```bash
